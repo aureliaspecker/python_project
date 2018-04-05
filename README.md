@@ -1,4 +1,4 @@
-# Introduction
+# Instructions 
 API Keys should be installed in config.json
 
 Ignore config.json file
