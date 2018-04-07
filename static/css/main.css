@@ -1,15 +1,13 @@
 
 body {
-	background-image: url("../images/rain_background.jpg");
-	background-size:cover;
-	background-attachment: fixed;
+	background-color: #eeceed;
 }
 
 .page_header {
 	padding-top:50px;
 	text-align: center;
 	color: #c51a1a;
-	background-image: url("../images/sky_background.jpg");
+	background-image: url("../images/weather_emojis.jpeg");
 	width:100%;
 	background-size: cover;
 	background-repeat: no-repeat;
