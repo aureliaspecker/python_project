@@ -1,5 +1,23 @@
+
 body {
-	background-image: url("../images/sky_background.jpg");
+	background-image: url("../images/rain_background.jpg");
 	background-size:cover;
 	background-attachment: fixed;
+}
+
+.page_header {
+	padding-top:50px;
+	text-align: center;
+	color: #c51a1a;
+	background-image: url("../images/sky_background.jpg");
+	width:100%;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	min-height: 200px;
+
+}
+
+h1 {
+	font-size: 300%;
 }
