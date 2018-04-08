@@ -7,7 +7,7 @@ body {
 	padding-top:50px;
 	text-align: center;
 	color: #a32c9e;
-	background-image: url("../images/weather_emojis.jpg");
+	background-image: url("../images/weather_emojis2.png");
 	width:100%;
 	background-size: cover;
 	background-repeat: no-repeat;
@@ -16,6 +16,18 @@ body {
 
 }
 
+.header_text {
+	position: absolute;
+	left: 25%;
+	padding-top: 10px;
+	padding-bottom:15px;
+	background: rgba(238,206,237, 0.5);
+	width: 50%;
+	border: solid;
+	border-color: #7ed1e3
+}
+
 h1 {
 	font-size: 300%;
+	opacity: 1;
 }
