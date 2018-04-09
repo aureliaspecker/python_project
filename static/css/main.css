@@ -6,7 +6,7 @@ body {
 .page_header {
 	padding-top:50px;
 	text-align: center;
-	color: #a32c9e;
+	color: blue;
 	background-image: url("../images/weather_emojis.jpg");
 	width:100%;
 	background-size: cover;
