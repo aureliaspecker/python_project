@@ -1,19 +1,19 @@
 
 body {
-	background-color: #eeceed;
+	background-color: white;
 }
 
 .page_header {
-	padding-top:50px;
+	padding-top:500px;
+	padding-bottom:500px;
 	text-align: center;
-	color: blue;
+	color: white;
 	background-image: url("../images/london_weather_test.jpg");
 	width:100%;
-	background-size: cover;
+	background-size: 200%;
 	background-repeat: no-repeat;
 	background-attachment: fixed;
-	min-height: 200px;
-	font-family: sans-serif;
+	font-family: futura;
 
 }
 
