@@ -1,4 +1,5 @@
 import os
+import requests
 from flask import Flask, render_template, request
 
 app = Flask("Whatweatherwhere")
@@ -11,15 +12,18 @@ def hello():
 def events():
     secret_key = app.config["SECRET_KEY"]
     endpoint = "http://api.openweathermap.org/data/2.5/weather"
-    print(request.form['location'])
-    playload = {
-        "q": "location",
+    city = request.form['location']
+    payload = {
+        "q": city,
         "units": "metric",
-        "appid":config_file["SECRET_KEY"]
+        "appid": secret_key
     }
+    response = requests.get(endpoint, params=payload)
+    print response.url
+    weather = response.json()["weather"][0]["main"]
 #       { data['location'] : 'London',
 #       data['keyword'] : 'London',
-    return render_template("main.html")
+    return render_template("main.html", city_weather=weather) #create new template to render the weather (instead of main.html)
 
 config_file = "config.json"
 # The check below is to see if you have the
