@@ -16,7 +16,9 @@ body {
 	font-family: futura;
 
 }
-
+#event-choice-form {
+    color: black;
+}
 h1 {
 	font-size: 300%;
 }
