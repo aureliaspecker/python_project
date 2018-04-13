@@ -20,7 +20,9 @@ def events():
     }
     response = requests.get(endpoint, params=payload)
     print response.url
-    weather = response.json()["weather"][0]["main"]
+    weather = {}
+    weather["main"] = response.json()["weather"][0]["main"]
+    weather["temp"] = response.json()["main"]["temp"]
 #       { data['location'] : 'London',
 #       data['keyword'] : 'London',
     return render_template("main.html", city_weather=weather) #create new template to render the weather (instead of main.html)
