@@ -25,7 +25,19 @@ def events():
     weather["temp"] = response.json()["main"]["temp"]
 #       { data['location'] : 'London',
 #       data['keyword'] : 'London',
-    return render_template("main.html", city_weather=weather) #create new template to render the weather (instead of main.html)
+
+    if weather["temp"] < 0:
+        wear = "Wear snow boots!"
+    elif weather["temp"] < 10:
+        wear = "You may want to bring a coat!"
+    elif weather["temp"] < 20:
+        wear = "Get your spring shoes out!"
+    elif weather["temp"] < 30:
+        wear = "Wear some shorts!"
+    else:
+        wear = "It's hot! Stay at home and have an ice-cream!"
+
+    return render_template("events.html", city_weather=weather, city_wear=wear)
 
 config_file = "config.json"
 # The check below is to see if you have the
