@@ -51,6 +51,12 @@ def events():
     if weather["main"] == "Snow":
         snow_wear = "You will need a pair of Moon Boots with hat, scarf and gloves!"
         return render_template("snow.html", city_weather=weather, city_wear=snow_wear)
+    if weather["main"] == "Clouds":
+        clouds_wear = "Take a pair of sunglasses just in case the sun comes out!"
+        return render_template("clouds.html", city_weather=weather, city_wear=clouds_wear)
+    if weather["main"] == "Extreme":
+        extreme_wear = "Maybe stay at home.."
+        return render_template("extreme.html")
     else:
         return render_template("events.html", city_weather=weather)
 
