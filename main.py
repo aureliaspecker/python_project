@@ -28,23 +28,24 @@ def events():
 #       { data['location'] : 'London',
 #       data['keyword'] : 'London',
 
-    if weather["temp"] < 0:
-        wear = "Wear snow boots!",
-    elif weather["temp"] < 10:
-        wear = "You may want to bring a coat!"
-    elif weather["temp"] < 20:
-        wear = "Get your spring shoes out!"
-    elif weather["temp"] < 30:
-        wear = "Wear some shorts!"
+    # if weather["temp"] < 0:
+    #     wear = "Wear snow boots!",
+    # elif weather["temp"] < 10:
+    #     wear = "You may want to bring a coat!"
+    # elif weather["temp"] < 20:
+    #     wear = "Get your spring shoes out!"
+    # elif weather["temp"] < 30:
+    #     wear = "Wear some shorts!"
+    # else:
+    #     wear = "It's hot! Stay at home and have an ice-cream!"
+    #
+    #
+    # return render_template("events.html", city_weather=weather, city_wear=wear)
+
+    if weather["main"] == "Rain":
+        return render_template("rain.html", city_weather=weather)
     else:
-        wear = "It's hot! Stay at home and have an ice-cream!"
-
-
-    return render_template("events.html", city_weather=weather, city_wear=wear)
-
-    if weather["main"] = "Rain":
-
-    return render_template("rain.html", city_weather=weather, city_wear=wear)
+        "test"
 
 
 
