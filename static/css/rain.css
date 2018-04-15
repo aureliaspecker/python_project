@@ -7,14 +7,14 @@ body {
 	padding-bottom:500px;
 	text-align: center;
 	color: white;
-	background-image: url("../images/cloudy_day.jpg");
+	background-image: url("../images/rain_image.jpg");
 	width:100%;
 	background-size: 200%;
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 	font-family: futura;
-}
 
+}
 #event-choice-form {
     color: black;
 }
