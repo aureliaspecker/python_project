@@ -45,8 +45,11 @@ def events():
     if weather["main"] == "Rain":
         rain_wear = "Take a raincoat and an umbrella!"
         return render_template("rain.html", city_weather=weather, city_wear=rain_wear)
+    if weather["main"] == "Thunderstorm":
+        thunderstorm_wear = "Make sure your raincoat is water and wind proof!"
+        return render_template("thunderstorm.html", city_weather=weather, city_wear=thunderstorm_wear)
     else:
-        "test"
+        return render_template("events.html", city_weather=weather)
 
 
 
