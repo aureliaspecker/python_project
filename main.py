@@ -11,7 +11,7 @@ def hello():
 @app.route("/events", methods=['GET', 'POST'])
 def events():
     secret_key = app.config["SECRET_KEY"]
-    endpoint = "http://api.openweathermap.org/data/2.5/weather"
+    endpoint = "http://api.openweathermap.org/data/2.5/weather" # need to update here if we want to change to forecast
     city = request.form['location']
     payload = {
         "q": city,
@@ -23,11 +23,13 @@ def events():
     weather = {}
     weather["main"] = response.json()["weather"][0]["main"]
     weather["temp"] = response.json()["main"]["temp"]
+    weather["description"] = response.json()["weather"][0]["description"]
+    weather["name"] = response.json()["name"]
 #       { data['location'] : 'London',
 #       data['keyword'] : 'London',
 
     if weather["temp"] < 0:
-        wear = "Wear snow boots!"
+        wear = "Wear snow boots!",
     elif weather["temp"] < 10:
         wear = "You may want to bring a coat!"
     elif weather["temp"] < 20:
@@ -37,7 +39,14 @@ def events():
     else:
         wear = "It's hot! Stay at home and have an ice-cream!"
 
+
     return render_template("events.html", city_weather=weather, city_wear=wear)
+
+    if weather["main"] = "Rain":
+
+    return render_template("rain.html", city_weather=weather, city_wear=wear)
+
+
 
 config_file = "config.json"
 # The check below is to see if you have the

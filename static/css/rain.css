@@ -1,4 +1,3 @@
-
 body {
 	background-color: white;
 }
@@ -8,7 +7,7 @@ body {
 	padding-bottom:500px;
 	text-align: center;
 	color: white;
-	background-image: url("../images/london_weather_test.jpg");
+	background-image: url("../images/sunset.jpg");
 	width:100%;
 	background-size: 200%;
 	background-repeat: no-repeat;
