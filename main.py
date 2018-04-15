@@ -8,7 +8,7 @@ app = Flask("Whatweatherwhere")
 def hello():
     return render_template("main.html")
 
-@app.route("/events", methods=['GET', 'POST'])
+@app.route("/weather", methods=['GET', 'POST'])
 def events():
     secret_key = app.config["SECRET_KEY"]
     endpoint = "http://api.openweathermap.org/data/2.5/weather" # need to update here if we want to change to forecast
@@ -43,7 +43,8 @@ def events():
     # return render_template("events.html", city_weather=weather, city_wear=wear)
 
     if weather["main"] == "Rain":
-        return render_template("rain.html", city_weather=weather)
+        rain_wear = "Take a raincoat and an umbrella!"
+        return render_template("rain.html", city_weather=weather, city_wear=rain_wear)
     else:
         "test"
 
