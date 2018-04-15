@@ -62,7 +62,13 @@ def events():
         return render_template("clouds.html", city_weather=weather, city_wear=clouds_wear)
     if weather["main"] == "Extreme":
         extreme_wear = "Maybe stay at home.."
-        return render_template("extreme.html")
+        return render_template("extreme.html", city_weather=weather, city_wear=extreme_wear)
+    if weather["main"] == "Additional":
+        additional_wear = "insert text"
+        return render_template("additional.html", city_weather=weather, city_wear=additional_wear)
+    if weather["main"] == "Atmosphere":
+        atmosphere_wear = "insert text"
+        return render_template("atmosphere.html", city_weather=weather, city_wear=atmosphere_wear)
     else:
         return render_template("events.html", city_weather=weather)
 
