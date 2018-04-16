@@ -1,4 +1,9 @@
 # Instructions
+
+The API key has been set as a local variable, in order to do the same on your computer enter this in terminal:
+
+export SECRET_KEY=<put secret key here> and ask Himalee for the key!
+
 API Keys should be installed in config.json
 
 Ignore config.json file (and terminal saying "untracked files")
