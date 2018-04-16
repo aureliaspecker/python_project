@@ -100,4 +100,4 @@ else:
     # secret_key = app.config['SECRET_KEY']
     app.config.from_json(config_file)
 
-app.run(port=port, debug=True)
+app.run(host='0.0.0.0', port=port, debug=True)
