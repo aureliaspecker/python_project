@@ -4,13 +4,16 @@ from flask import Flask, render_template, request
 
 app = Flask("Whatweatherwhere")
 
+port = int(os.environ.get("PORT", 5000))
+
 @app.route("/", methods=['GET', 'POST'])
 def hello():
+    print port
     return render_template("main.html")
 
 @app.route("/weather", methods=['GET', 'POST'])
 def events():
-    secret_key = os.environ["SECRET_KEY"]
+    secret_key = os.environ.get("SECRET_KEY", app.config["SECRET_KEY"])
     endpoint = "http://api.openweathermap.org/data/2.5/weather" # need to update here if we want to change to forecast
     city = request.form['location']
     payload = {
@@ -97,4 +100,4 @@ else:
     # secret_key = app.config['SECRET_KEY']
     app.config.from_json(config_file)
 
-app.run(debug=True)
+app.run(port=port, debug=True)
