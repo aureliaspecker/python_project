@@ -10,7 +10,7 @@ def hello():
 
 @app.route("/weather", methods=['GET', 'POST'])
 def events():
-    secret_key = app.config["SECRET_KEY"]
+    secret_key = os.environ["SECRET_KEY"]
     endpoint = "http://api.openweathermap.org/data/2.5/weather" # need to update here if we want to change to forecast
     city = request.form['location']
     payload = {
