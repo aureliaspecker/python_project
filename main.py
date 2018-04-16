@@ -4,11 +4,11 @@ from flask import Flask, render_template, request
 
 app = Flask("Whatweatherwhere")
 
-port = int(os.environ.get("PORT", 5000))
+port = int(os.environ.get("PORT", 5000)) # saved the key as a local variable 
 
 @app.route("/", methods=['GET', 'POST'])
 def hello():
-    print port
+    print port #what is this doing?
     return render_template("main.html")
 
 @app.route("/weather", methods=['GET', 'POST'])
