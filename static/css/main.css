@@ -1,21 +1,63 @@
-
 body {
 	background-color: white;
 }
 
+.warning {
+	color: red;
+}
+
+.clouds {
+  background-image: url("../images/cloudy_day.jpg");
+}
+
+.additional {
+	background-image: url("../images/drizzle.jpg");
+}
+
+.atmosphere {
+	background-image: url("../images/drizzle.jpg");
+}
+
+.clear {
+	background-image: url("../images/sunny_day.jpg");
+}
+
+.drizzle {
+	background-image: url("../images/drizzle.jpg");
+}
+
+.extreme {
+	background-image: url("../images/stormy_day.jpg");
+}
+
+.rain {
+	background-image: url("../images/rainy_day.jpg");
+}
+
+.snow {
+	background-image: url("../images/snow.jpg");
+}
+
+.thunderstorm {
+	background-image: url("../images/cloudy_day.jpg");
+}
+
+.default {
+  background-image: url("../images/london_weather_test.jpg");
+}
+
 .page_header {
-	padding-top:500px;
+  padding-top:500px;
 	padding-bottom:500px;
 	text-align: center;
 	color: white;
-	background-image: url("../images/london_weather_test.jpg");
 	width:100%;
 	background-size: 200%;
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 	font-family: futura;
-
 }
+
 #event-choice-form {
     color: black;
 }
@@ -31,7 +73,7 @@ h2 {
 
 h3 {
 	text-align: center;
-	color: white;
+  color: white;
 }
 
 .box {

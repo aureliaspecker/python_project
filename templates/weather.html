@@ -9,12 +9,19 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 		<!-- our css -->
-		<link rel="stylesheet" type="text/css" href="../static/css/weather.css">
+		<link rel="stylesheet" type="text/css" href="../static/css/main.css">
 	</head>
 
 	<body>
 		<!-- title -->
-		<div class="{{city_weather["main"]}}">
+		<div class="page_header {{css_class}}">
+
+			{% if css_class == "default" %}
+				<h1 class="warning">
+					No background: {{city_weather["main"]}}
+				</h1>
+			{% endif %}
+
 			<h1><strong>
 			 Weather for {{city_weather["name"]}}
 			</h1></strong>
