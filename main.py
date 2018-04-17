@@ -13,7 +13,7 @@ def hello():
 
 @app.route("/weather", methods=['GET', 'POST'])
 def events():
-    secret_key = os.environ.get("SECRET_KEY", none)
+    secret_key = os.environ.get("SECRET_KEY")
     endpoint = "http://api.openweathermap.org/data/2.5/weather" # need to update here if we want to change to forecast
     city = request.form['location']
     payload = {
@@ -47,7 +47,7 @@ def events():
 
     if weather["main"] == "Rain":
         rain_wear = "Take a raincoat and an umbrella!"
-        return render_template("rain.html", city_weather=weather, city_wear=rain_wear, value=secret_key)
+        return render_template("rain.html", city_weather=weather, city_wear=rain_wear)
     if weather["main"] == "Thunderstorm":
         thunderstorm_wear = "Make sure your raincoat is water and wind proof!"
         return render_template("thunderstorm.html", city_weather=weather, city_wear=thunderstorm_wear)
