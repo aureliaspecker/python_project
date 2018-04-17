@@ -1,5 +1,6 @@
 import os # imports a library that lets us read the environment variables
 import requests
+import twitter
 from flask import Flask, render_template, request
 
 app = Flask("Whatweatherwhere")
@@ -74,6 +75,7 @@ def events():
         return render_template("weather.html", css_class="atmosphere", city_weather=weather, city_wear=atmosphere_wear)
     else:
         return render_template("weather.html", css_class="default", city_weather=weather)
+
 
 
 app.run(host='0.0.0.0', port=port, debug=True) # making sure application will start on the specific port
