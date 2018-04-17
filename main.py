@@ -10,7 +10,7 @@ port = int(os.environ.get("PORT", 5000)) # saved the key as an environment varia
 @app.route("/", methods=['GET', 'POST'])
 def hello():
     print port #what is this doing?
-    return render_template("main.html")
+    return render_template("main.html")    
 
 @app.route("/weather", methods=['GET', 'POST'])
 def events():
@@ -29,6 +29,8 @@ def events():
     weather["temp"] = response.json()["main"]["temp"]
     weather["description"] = response.json()["weather"][0]["description"]
     weather["name"] = response.json()["name"]
+
+
 #       { data['location'] : 'London',
 #       data['keyword'] : 'London',
 
@@ -76,6 +78,19 @@ def events():
     else:
         return render_template("weather.html", css_class="default", city_weather=weather)
 
+
+    # api = twitter.Api(consumer_key='nZaBDWJQJ4V2iBfjkosROsBS7',
+    #                   consumer_secret='XGzOKAebDPZeEP96zPbqExmzYghpxVmpRTBzaSvrnXZzafy6c9',
+    #                   access_token_key='986265829162483712-Q4YqfeGHoJDbp97IiIHZen2Ib6Qhgz0',
+    #                   access_token_secret='DTGVmQWjzEvgq6A8902UPJmYiN1MLZA7qN8HWcwF9bYzI')
+
+
+    # print(api.VerifyCredentials())
+    # {"id": 986265829162483712, "location": "London", "name": "WhatWeatherWear"}
+
+    # # AUTOMATIC TWEET WHEN USER SEARCHES
+    # status = api.PostUpdate({{city_weather["name"]}})
+    # print(status.text)
 
 
 app.run(host='0.0.0.0', port=port, debug=True) # making sure application will start on the specific port
