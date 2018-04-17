@@ -1,10 +1,10 @@
-import os
+import os # imports a library that lets us read the environment variables
 import requests
 from flask import Flask, render_template, request
 
 app = Flask("Whatweatherwhere")
 
-port = int(os.environ.get("PORT", 5000)) # saved the key as a local variable 
+port = int(os.environ.get("PORT", 5000)) # saved the key as an environment variable
 
 @app.route("/", methods=['GET', 'POST'])
 def hello():
@@ -13,7 +13,7 @@ def hello():
 
 @app.route("/weather", methods=['GET', 'POST'])
 def events():
-    secret_key = os.environ.get("SECRET_KEY", app.config["SECRET_KEY"])
+    secret_key = os.environ.get("SECRET_KEY", none)
     endpoint = "http://api.openweathermap.org/data/2.5/weather" # need to update here if we want to change to forecast
     city = request.form['location']
     payload = {
@@ -47,7 +47,7 @@ def events():
 
     if weather["main"] == "Rain":
         rain_wear = "Take a raincoat and an umbrella!"
-        return render_template("rain.html", city_weather=weather, city_wear=rain_wear)
+        return render_template("rain.html", city_weather=weather, city_wear=rain_wear, value=secret_key)
     if weather["main"] == "Thunderstorm":
         thunderstorm_wear = "Make sure your raincoat is water and wind proof!"
         return render_template("thunderstorm.html", city_weather=weather, city_wear=thunderstorm_wear)
@@ -77,27 +77,27 @@ def events():
 
 
 
-config_file = "config.json"
-# The check below is to see if you have the
-# config file defined and if you do not, it will display
-# basic guidelines steps to set the config file.
-if not os.path.isfile(config_file):
-    app.logger.error(
-        "Your config.json file is missing." +
-        "You need to create one in order for this demo app to run." +
-        "Please check the README.md file in order to set it up."
-    )
-else:
-    # We are in the case where we have the config file.
-    #
-    # The line below is the magic statement that is going
-    # to load our configuration from the config.json file.
-    # After the line below is executed the config defined
-    # in config.json will be available in the app variable.
-    # Example on how you can get the config values:
-    # secret_key = app.secret_key
-    # OR
-    # secret_key = app.config['SECRET_KEY']
-    app.config.from_json(config_file)
+# config_file = "config.json" # I don't think we need this..
+# # The check below is to see if you have the
+# # config file defined and if you do not, it will display
+# # basic guidelines steps to set the config file.
+# if not os.path.isfile(config_file):
+#     app.logger.error(
+#         "Your config.json file is missing." +
+#         "You need to create one in order for this demo app to run." +
+#         "Please check the README.md file in order to set it up."
+#     )
+# else:
+#     # We are in the case where we have the config file.
+#     #
+#     # The line below is the magic statement that is going
+#     # to load our configuration from the config.json file.
+#     # After the line below is executed the config defined
+#     # in config.json will be available in the app variable.
+#     # Example on how you can get the config values:
+#     # secret_key = app.secret_key
+#     # OR
+#     # secret_key = app.config['SECRET_KEY']
+#     app.config.from_json(config_file)
 
-app.run(host='0.0.0.0', port=port, debug=True)
+app.run(host='0.0.0.0', port=port, debug=True) # making sure application will start on the specific port
