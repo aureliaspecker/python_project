@@ -76,28 +76,4 @@ def events():
         return render_template("events.html", city_weather=weather)
 
 
-
-# config_file = "config.json" # I don't think we need this..
-# # The check below is to see if you have the
-# # config file defined and if you do not, it will display
-# # basic guidelines steps to set the config file.
-# if not os.path.isfile(config_file):
-#     app.logger.error(
-#         "Your config.json file is missing." +
-#         "You need to create one in order for this demo app to run." +
-#         "Please check the README.md file in order to set it up."
-#     )
-# else:
-#     # We are in the case where we have the config file.
-#     #
-#     # The line below is the magic statement that is going
-#     # to load our configuration from the config.json file.
-#     # After the line below is executed the config defined
-#     # in config.json will be available in the app variable.
-#     # Example on how you can get the config values:
-#     # secret_key = app.secret_key
-#     # OR
-#     # secret_key = app.config['SECRET_KEY']
-#     app.config.from_json(config_file)
-
 app.run(host='0.0.0.0', port=port, debug=True) # making sure application will start on the specific port
