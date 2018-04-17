@@ -47,31 +47,31 @@ def events():
 
     if weather["main"] == "Rain":
         rain_wear = "Take a raincoat and an umbrella!"
-        return render_template("rain.html", city_weather=weather, city_wear=rain_wear)
+        return render_template("weather.html", city_weather=weather, city_wear=rain_wear)
     if weather["main"] == "Thunderstorm":
         thunderstorm_wear = "Make sure your raincoat is water and wind proof!"
-        return render_template("thunderstorm.html", city_weather=weather, city_wear=thunderstorm_wear)
+        return render_template("weather.html", city_weather=weather, city_wear=thunderstorm_wear)
     if weather["main"] == "Snow":
         snow_wear = "You will need a pair of Moon Boots with hat, scarf and gloves!"
-        return render_template("snow.html", city_weather=weather, city_wear=snow_wear)
+        return render_template("weather.html", city_weather=weather, city_wear=snow_wear)
     if weather["main"] == "Drizzle":
         drizzle_wear = "Today will be humid, so make sure you bring a spare pair of shoes!"
-        return render_template("drizzle.html", city_weather=weather, city_wear=drizzle_wear)
+        return render_template("weather.html", city_weather=weather, city_wear=drizzle_wear)
     if weather["main"] == "Clear":
         clear_wear = "It's nice weather - enjoy it while it lasts and wear something summery!"
-        return render_template("clear.html", city_weather=weather, city_wear=clear_wear)
+        return render_template("weather.html", city_weather=weather, city_wear=clear_wear)
     if weather["main"] == "Clouds":
         clouds_wear = "Take a pair of sunglasses just in case the sun comes out!"
-        return render_template("clouds.html", city_weather=weather, city_wear=clouds_wear)
+        return render_template("weather.html", city_weather=weather, city_wear=clouds_wear)
     if weather["main"] == "Extreme":
         extreme_wear = "Maybe stay at home.."
-        return render_template("extreme.html", city_weather=weather, city_wear=extreme_wear)
+        return render_template("weather.html", city_weather=weather, city_wear=extreme_wear)
     if weather["main"] == "Additional":
         additional_wear = "insert text"
-        return render_template("additional.html", city_weather=weather, city_wear=additional_wear)
+        return render_template("weather.html", city_weather=weather, city_wear=additional_wear)
     if weather["main"] == "Atmosphere":
         atmosphere_wear = "insert text"
-        return render_template("atmosphere.html", city_weather=weather, city_wear=atmosphere_wear)
+        return render_template("weather.html", city_weather=weather, city_wear=atmosphere_wear)
     else:
         return render_template("events.html", city_weather=weather)
 
