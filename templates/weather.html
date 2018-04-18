@@ -14,6 +14,9 @@
 
 	<body>
 		<!-- title -->
+		<!-- Defined the class as "page_header" and  according to "main" description -->
+		<!-- If we do not have a defined if statement for a weather type, it falls under an else statement "default".
+					If "default" css class is true, it gives a red warning sign so we can add in a background image-->
 		<div class="page_header {{css_class}}">
 
 			{% if css_class == "default" %}
@@ -23,23 +26,23 @@
 			{% endif %}
 
 			<h1><strong>
-			 Weather for {{city_weather["name"]}}
+			 Weather for {{city_weather["name"]}} <!-- Name of chosen city-->
 			</h1></strong>
 
 			<h3>
-			{{city_weather["description"]}}
+			{{city_weather["description"]}} <!-- Brief description of weather in chosen city-->
 			</h3>
 
 			<h3>
-				 {{city_weather["temp"]}} &#x2103
+				 {{city_weather["temp"]}} &#x2103 <!-- Temperature of chosen city-->
 			</h3>
 
       <h1>
-        {{city_wear}}
+        {{city_wear}} <!-- Pre-written text describing weather 'tip' according to weatehr type -->
       </h1>
 
 		  <h3 class = "tagline">Weather happens - wherever you are - and we want to help you prepare!</h3>
-		  <!-- Event form -->
+		  <!-- City form -->
 		  <div id = "event-choice-form">
 		    <form method="post" action="/weather">
 		      <section>

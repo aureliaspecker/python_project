@@ -1,7 +1,0 @@
-{
-    "MAILGUN_SECRET_KEY": "your_mailgun_secretkey",
-    "OTHER_APP_SECRET_KEY": "your_other_app_secret_key",
-    "MY_APP_NAME": "AwesomeApp",
-    "ENVIRONMENT": "production",
-    ...
-}
