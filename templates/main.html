@@ -33,6 +33,7 @@
 		      <section>
 		        <h2>Choose a location... We'll tell you what the weather's like & what to wear</h2><br>
 		        <h2>What would you like to do, and where?</h2>
+		        <p>{% if error %}{{error}}{% endif %}</p>
 		        <input type="text" id="location" class = "box" name="location" value="" placeholder="Location e.g. London" required="required" autofocus="autofocus"/><br>
 		        <input type="submit" value="Submit" id="submit-button" class= "button">
 		      </section>

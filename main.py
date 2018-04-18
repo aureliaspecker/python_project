@@ -31,10 +31,13 @@ def events():
     # "weather" is a dictionary - the responses are the pieces of data we want to use and display within a list the API creates.
     # response.json converts the API string into a list.
     weather = {}
-    weather["main"] = response.json()["weather"][0]["main"]
-    weather["temp"] = response.json()["main"]["temp"]
-    weather["description"] = response.json()["weather"][0]["description"]
-    weather["name"] = response.json()["name"]
+    if response.json().has_key("weather"):
+        weather["main"] = response.json()["weather"][0]["main"]
+        weather["temp"] = response.json()["main"]["temp"]
+        weather["description"] = response.json()["weather"][0]["description"]
+        weather["name"] = response.json()["name"]
+    else:
+        return render_template("main.html", error="Can't find the location")
 
     api = twitter.Api(
         consumer_key = os.environ.get("consumer_key"),
