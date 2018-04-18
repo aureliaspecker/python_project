@@ -31,24 +31,25 @@
 				</h1>
 			{% endif %}
 
-			<h1><strong>
-			 Weather for {{city_weather["name"]}} <!-- Name of chosen city-->
-			</h1></strong>
+				<h1><strong>
+			 			Weather for {{city_weather["name"]}} <!-- Name of chosen city-->
+				</h1></strong>
 
-			<h3>
-			{{city_weather["description"]}} <!-- Brief description of weather in chosen city-->
-			</h3>
+				<h3>
+						{{city_weather["description"]}} <!-- Brief description of weather in chosen city-->
+				</h3>
 
-			<h3>
-				 {{city_weather["temp"]}} &#x2103 <!-- Temperature of chosen city-->
-			</h3>
+				<h3>
+				 	{{city_weather["temp"]}} &#x2103 <!-- Temperature of chosen city-->
+				</h3>
 
-      <h1>
-        {{city_wear}} <!-- Pre-written text describing weather 'tip' according to weather type -->
-      </h1>
+      	<h1>
+        	{{city_wear}} <!-- Pre-written text describing weather 'tip' according to weather type -->
+      	</h1>
 
-		  <h3 class = "tagline">Weather happens - wherever you are - and we want to help you prepare!</h3>
-		  <!-- City form -->
+		  	<h3 class = "tagline">Weather happens - wherever you are - and we want to help you prepare!</h3>
+
+		<!-- City form -->
 		  <div id = "event-choice-form">
 		    <form method="post" action="/weather">
 		      <section>

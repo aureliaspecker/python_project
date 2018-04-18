@@ -45,7 +45,7 @@ body {
 }
 
 .haze {
-  background-image: url("../images/haze1.jpg");
+  background-image: url("../images/haze1.jpg")
 }
 
 .default {
@@ -53,8 +53,8 @@ body {
 }
 
 .page_header {
-  padding-top:500px;
-	padding-bottom:500px;
+  padding-top:300px;
+	padding-bottom:300px;
 	text-align: center;
 	color: white;
 	width:100%;
@@ -132,12 +132,11 @@ h3 {
 }
 
 .footer {
-	position: sticky;
-	top: 0;
-	bottom: 0;
-	right: 0;
-	left: 0;
-  width:100%;
-  background-color: #947AE3;
-	padding: 1rem;
+  position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   background-color: #947AE3;
+   color: white;
+   text-align: center;
 }
