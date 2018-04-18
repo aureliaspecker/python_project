@@ -44,6 +44,10 @@ body {
 	background-image: url("../images/thunderstorm2.jpg");
 }
 
+.haze {
+  background-image: url("../images/haze1.jpg");
+}
+
 .default {
   background-image: url("../images/london_weather_test.jpg");
 }

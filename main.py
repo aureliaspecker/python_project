@@ -100,6 +100,9 @@ def events():
     if weather["main"] == "Atmosphere":
         atmosphere_wear = "insert text"
         return render_template("weather.html", css_class="atmosphere", city_weather=weather, city_wear=atmosphere_wear)
+    if weather ["main"] == "Haze":
+        haze_wear = "insert text"
+        return render_template("weather.html", css_class="haze", city_weather=weather, city_wear=haze_wear)
     else:
         return render_template("weather.html", css_class="default", city_weather=weather)
 
