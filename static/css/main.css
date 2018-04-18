@@ -32,7 +32,7 @@ h2 {
 }
 
 .button {
-  background-color: #BB0A21;
+  background-color: #947AE3;
   display: inline-block;
   padding: 12px 22px;
   color: #ffffff;
@@ -40,4 +40,36 @@ h2 {
   border: none;
   text-decoration: none;
   margin: 10px;
+}
+
+/* Add a black background color to the top navigation */
+.topnav {
+    background-color: #333;
+    overflow: hidden;
+		font-family: futura;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+    float: left;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+		font-family: futura;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+    background-color: #E6E6FA;
+    color: black;
+		font-family: futura;
+}
+
+/* Add a color to the active/current link */
+.topnav a.active {
+    background-color: #846DFF;
+    color: white;
+		font-family: futura;
 }
