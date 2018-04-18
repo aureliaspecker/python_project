@@ -10,7 +10,7 @@ port = int(os.environ.get("PORT", 5000))
 
 @app.route("/", methods=['GET', 'POST'])
 def hello():
-    print port #what is this doing?
+    #print port # what is this doing?
     return render_template("main.html") # renders the main page
 
 # Calling the API using the endpoint and secret key.
@@ -35,24 +35,6 @@ def events():
     weather["temp"] = response.json()["main"]["temp"]
     weather["description"] = response.json()["weather"][0]["description"]
     weather["name"] = response.json()["name"]
-
-
-#       { data['location'] : 'London',
-#       data['keyword'] : 'London',
-
-    # if weather["temp"] < 0:
-    #     wear = "Wear snow boots!",
-    # elif weather["temp"] < 10:
-    #     wear = "You may want to bring a coat!"
-    # elif weather["temp"] < 20:
-    #     wear = "Get your spring shoes out!"
-    # elif weather["temp"] < 30:
-    #     wear = "Wear some shorts!"
-    # else:
-    #     wear = "It's hot! Stay at home and have an ice-cream!"
-    #
-    #
-    # return render_template("events.html", city_weather=weather, city_wear=wear)
 
     api = twitter.Api(
         consumer_key = os.environ.get("consumer_key"),
@@ -106,10 +88,32 @@ def events():
     else:
         return render_template("weather.html", css_class="default", city_weather=weather)
 
+    # Old if statements:
+    # if weather["temp"] < 0:
+    #     wear = "Wear snow boots!",
+    # elif weather["temp"] < 10:
+    #     wear = "You may want to bring a coat!"
+    # elif weather["temp"] < 20:
+    #     wear = "Get your spring shoes out!"
+    # elif weather["temp"] < 30:
+    #     wear = "Wear some shorts!"
+    # else:
+    #     wear = "It's hot! Stay at home and have an ice-cream!"
+    #
+    #
+    # return render_template("events.html", city_weather=weather, city_wear=wear)
 
-# @app.route("/about")
-# def about():
-#     return render_template("about.html")
+@app.route("/about")
+def about():
+    return render_template("about.html")
+
+@app.route("/whoweare")
+def whoweare():
+    return render_template("who_we_are.html")
+
+@app.route("/questions")
+def questions():
+    return render_template("questions.html")
 
 
 # Making sure application will start on the specific port
