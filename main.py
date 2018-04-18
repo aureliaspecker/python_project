@@ -103,6 +103,7 @@ def events():
     #
     # return render_template("events.html", city_weather=weather, city_wear=wear)
 
+# App routes for the nav bar
 @app.route("/about")
 def about():
     return render_template("about.html")
@@ -116,5 +117,5 @@ def questions():
     return render_template("questions.html")
 
 
-# Making sure application will start on the specific port
+# Making sure application will start on a specific port assigned by Heroku
 app.run(host='0.0.0.0', port=port, debug=True)
